@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Saisie des Scores</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Administration - Saisie des scores</h1>
+    <button onclick="resetTournament()">🧹 Réinitialiser le tournoi</button>
+<h2>Journée 1</h2>
+
+        <fieldset>
+          <legend>Clément vs André</legend>
+          <input type="number" placeholder="Set 1 - Clément" id="Clément_vs_André_set1p1">
+          <input type="number" placeholder="Set 1 - André" id="Clément_vs_André_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Clément" id="Clément_vs_André_set2p1">
+          <input type="number" placeholder="Set 2 - André" id="Clément_vs_André_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Clément" id="Clément_vs_André_set3p1">
+          <input type="number" placeholder="Set 3 - André" id="Clément_vs_André_set3p2"><br>
+          <button onclick="submitMatch('Clément_vs_André', 'Clément', 'André'); return false;">Valider</button>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Guillaume vs Mica</legend>
+          <input type="number" placeholder="Set 1 - Guillaume" id="Guillaume_vs_Mica_set1p1">
+          <input type="number" placeholder="Set 1 - Mica" id="Guillaume_vs_Mica_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Guillaume" id="Guillaume_vs_Mica_set2p1">
+          <input type="number" placeholder="Set 2 - Mica" id="Guillaume_vs_Mica_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Guillaume" id="Guillaume_vs_Mica_set3p1">
+          <input type="number" placeholder="Set 3 - Mica" id="Guillaume_vs_Mica_set3p2"><br>
+          <button onclick="submitMatch('Guillaume_vs_Mica', 'Guillaume', 'Mica'); return false;">Valider</button>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Michaël vs Yohan</legend>
+          <input type="number" placeholder="Set 1 - Michaël" id="Michaël_vs_Yohan_set1p1">
+          <input type="number" placeholder="Set 1 - Yohan" id="Michaël_vs_Yohan_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Michaël" id="Michaël_vs_Yohan_set2p1">
+          <input type="number" placeholder="Set 2 - Yohan" id="Michaël_vs_Yohan_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Michaël" id="Michaël_vs_Yohan_set3p1">
+          <input type="number" placeholder="Set 3 - Yohan" id="Michaël_vs_Yohan_set3p2"><br>
+          <button onclick="submitMatch('Michaël_vs_Yohan', 'Michaël', 'Yohan'); return false;">Valider</button>
+        </fieldset>
+        <h2>Journée 2</h2>
+
+        <fieldset>
+          <legend>Clément vs Yohan</legend>
+          <input type="number" placeholder="Set 1 - Clément" id="Clément_vs_Yohan_set1p1">
+          <input type="number" placeholder="Set 1 - Yohan" id="Clément_vs_Yohan_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Clément" id="Clément_vs_Yohan_set2p1">
+          <input type="number" placeholder="Set 2 - Yohan" id="Clément_vs_Yohan_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Clément" id="Clément_vs_Yohan_set3p1">
+          <input type="number" placeholder="Set 3 - Yohan" id="Clément_vs_Yohan_set3p2"><br>
+          <button onclick="submitMatch('Clément_vs_Yohan', 'Clément', 'Yohan'); return false;">Valider</button>
+        </fieldset>
+        
+        <fieldset>
+          <legend>André vs Guillaume</legend>
+          <input type="number" placeholder="Set 1 - André" id="André_vs_Guillaume_set1p1">
+          <input type="number" placeholder="Set 1 - Guillaume" id="André_vs_Guillaume_set1p2"><br>
+          <input type="number" placeholder="Set 2 - André" id="André_vs_Guillaume_set2p1">
+          <input type="number" placeholder="Set 2 - Guillaume" id="André_vs_Guillaume_set2p2"><br>
+          <input type="number" placeholder="Set 3 - André" id="André_vs_Guillaume_set3p1">
+          <input type="number" placeholder="Set 3 - Guillaume" id="André_vs_Guillaume_set3p2"><br>
+          <button onclick="submitMatch('André_vs_Guillaume', 'André', 'Guillaume'); return false;">Valider</button>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Michaël vs Mica</legend>
+          <input type="number" placeholder="Set 1 - Michaël" id="Michaël_vs_Mica_set1p1">
+          <input type="number" placeholder="Set 1 - Mica" id="Michaël_vs_Mica_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Michaël" id="Michaël_vs_Mica_set2p1">
+          <input type="number" placeholder="Set 2 - Mica" id="Michaël_vs_Mica_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Michaël" id="Michaël_vs_Mica_set3p1">
+          <input type="number" placeholder="Set 3 - Mica" id="Michaël_vs_Mica_set3p2"><br>
+          <button onclick="submitMatch('Michaël_vs_Mica', 'Michaël', 'Mica'); return false;">Valider</button>
+        </fieldset>
+        <h2>Journée 3</h2>
+
+        <fieldset>
+          <legend>Mica vs Yohan</legend>
+          <input type="number" placeholder="Set 1 - Mica" id="Mica_vs_Yohan_set1p1">
+          <input type="number" placeholder="Set 1 - Yohan" id="Mica_vs_Yohan_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Mica" id="Mica_vs_Yohan_set2p1">
+          <input type="number" placeholder="Set 2 - Yohan" id="Mica_vs_Yohan_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Mica" id="Mica_vs_Yohan_set3p1">
+          <input type="number" placeholder="Set 3 - Yohan" id="Mica_vs_Yohan_set3p2"><br>
+          <button onclick="submitMatch('Mica_vs_Yohan', 'Mica', 'Yohan'); return false;">Valider</button>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Michaël vs Guillaume</legend>
+          <input type="number" placeholder="Set 1 - Michaël" id="Michaël_vs_Guillaume_set1p1">
+          <input type="number" placeholder="Set 1 - Guillaume" id="Michaël_vs_Guillaume_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Michaël" id="Michaël_vs_Guillaume_set2p1">
+          <input type="number" placeholder="Set 2 - Guillaume" id="Michaël_vs_Guillaume_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Michaël" id="Michaël_vs_Guillaume_set3p1">
+          <input type="number" placeholder="Set 3 - Guillaume" id="Michaël_vs_Guillaume_set3p2"><br>
+          <button onclick="submitMatch('Michaël_vs_Guillaume', 'Michaël', 'Guillaume'); return false;">Valider</button>
+        </fieldset>
+        <h2>Journée 4</h2>
+
+        <fieldset>
+          <legend>Clément vs Mica</legend>
+          <input type="number" placeholder="Set 1 - Clément" id="Clément_vs_Mica_set1p1">
+          <input type="number" placeholder="Set 1 - Mica" id="Clément_vs_Mica_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Clément" id="Clément_vs_Mica_set2p1">
+          <input type="number" placeholder="Set 2 - Mica" id="Clément_vs_Mica_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Clément" id="Clément_vs_Mica_set3p1">
+          <input type="number" placeholder="Set 3 - Mica" id="Clément_vs_Mica_set3p2"><br>
+          <button onclick="submitMatch('Clément_vs_Mica', 'Clément', 'Mica'); return false;">Valider</button>
+        </fieldset>
+        
+        <fieldset>
+          <legend>André vs Yohan</legend>
+          <input type="number" placeholder="Set 1 - André" id="André_vs_Yohan_set1p1">
+          <input type="number" placeholder="Set 1 - Yohan" id="André_vs_Yohan_set1p2"><br>
+          <input type="number" placeholder="Set 2 - André" id="André_vs_Yohan_set2p1">
+          <input type="number" placeholder="Set 2 - Yohan" id="André_vs_Yohan_set2p2"><br>
+          <input type="number" placeholder="Set 3 - André" id="André_vs_Yohan_set3p1">
+          <input type="number" placeholder="Set 3 - Yohan" id="André_vs_Yohan_set3p2"><br>
+          <button onclick="submitMatch('André_vs_Yohan', 'André', 'Yohan'); return false;">Valider</button>
+        </fieldset>
+        <h2>Journée 5</h2>
+
+        <fieldset>
+          <legend>André vs Mica</legend>
+          <input type="number" placeholder="Set 1 - André" id="André_vs_Mica_set1p1">
+          <input type="number" placeholder="Set 1 - Mica" id="André_vs_Mica_set1p2"><br>
+          <input type="number" placeholder="Set 2 - André" id="André_vs_Mica_set2p1">
+          <input type="number" placeholder="Set 2 - Mica" id="André_vs_Mica_set2p2"><br>
+          <input type="number" placeholder="Set 3 - André" id="André_vs_Mica_set3p1">
+          <input type="number" placeholder="Set 3 - Mica" id="André_vs_Mica_set3p2"><br>
+          <button onclick="submitMatch('André_vs_Mica', 'André', 'Mica'); return false;">Valider</button>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Clément vs Michaël</legend>
+          <input type="number" placeholder="Set 1 - Clément" id="Clément_vs_Michaël_set1p1">
+          <input type="number" placeholder="Set 1 - Michaël" id="Clément_vs_Michaël_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Clément" id="Clément_vs_Michaël_set2p1">
+          <input type="number" placeholder="Set 2 - Michaël" id="Clément_vs_Michaël_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Clément" id="Clément_vs_Michaël_set3p1">
+          <input type="number" placeholder="Set 3 - Michaël" id="Clément_vs_Michaël_set3p2"><br>
+          <button onclick="submitMatch('Clément_vs_Michaël', 'Clément', 'Michaël'); return false;">Valider</button>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Guillaume vs Yohan</legend>
+          <input type="number" placeholder="Set 1 - Guillaume" id="Guillaume_vs_Yohan_set1p1">
+          <input type="number" placeholder="Set 1 - Yohan" id="Guillaume_vs_Yohan_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Guillaume" id="Guillaume_vs_Yohan_set2p1">
+          <input type="number" placeholder="Set 2 - Yohan" id="Guillaume_vs_Yohan_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Guillaume" id="Guillaume_vs_Yohan_set3p1">
+          <input type="number" placeholder="Set 3 - Yohan" id="Guillaume_vs_Yohan_set3p2"><br>
+          <button onclick="submitMatch('Guillaume_vs_Yohan', 'Guillaume', 'Yohan'); return false;">Valider</button>
+        </fieldset>
+        <h2>Journée 6</h2>
+
+        <fieldset>
+          <legend>André vs Michaël</legend>
+          <input type="number" placeholder="Set 1 - André" id="André_vs_Michaël_set1p1">
+          <input type="number" placeholder="Set 1 - Michaël" id="André_vs_Michaël_set1p2"><br>
+          <input type="number" placeholder="Set 2 - André" id="André_vs_Michaël_set2p1">
+          <input type="number" placeholder="Set 2 - Michaël" id="André_vs_Michaël_set2p2"><br>
+          <input type="number" placeholder="Set 3 - André" id="André_vs_Michaël_set3p1">
+          <input type="number" placeholder="Set 3 - Michaël" id="André_vs_Michaël_set3p2"><br>
+          <button onclick="submitMatch('André_vs_Michaël', 'André', 'Michaël'); return false;">Valider</button>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Clément vs Guillaume</legend>
+          <input type="number" placeholder="Set 1 - Clément" id="Clément_vs_Guillaume_set1p1">
+          <input type="number" placeholder="Set 1 - Guillaume" id="Clément_vs_Guillaume_set1p2"><br>
+          <input type="number" placeholder="Set 2 - Clément" id="Clément_vs_Guillaume_set2p1">
+          <input type="number" placeholder="Set 2 - Guillaume" id="Clément_vs_Guillaume_set2p2"><br>
+          <input type="number" placeholder="Set 3 - Clément" id="Clément_vs_Guillaume_set3p1">
+          <input type="number" placeholder="Set 3 - Guillaume" id="Clément_vs_Guillaume_set3p2"><br>
+          <button onclick="submitMatch('Clément_vs_Guillaume', 'Clément', 'Guillaume'); return false;">Valider</button>
+        </fieldset>
+        
+  </div>
+</body>
+</html>
