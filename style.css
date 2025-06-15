@@ -4,6 +4,10 @@ body {
   background: #f9f9f9;
   color: #333;
 }
+a {
+  color: #f9f9f9 !important;
+  text-decoration: none !important;
+}
 .container {
   max-width: 900px;
   margin: auto;
