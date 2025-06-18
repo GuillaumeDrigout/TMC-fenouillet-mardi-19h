@@ -1,46 +1,4 @@
 
-let scores = {};
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (!location.pathname.includes('admin')) {
-    fetch("resultats.json")
-      .then((response) => {
-        if (!response.ok) throw new Error("Erreur de chargement des scores");
-        return response.json();
-      })
-      .then((data) => {
-        scores = data;
-        renderResults();
-        renderRanking();
-        renderFinales();
-        renderFinalScores();
-      })
-      .catch((error) => {
-        console.error("Erreur:", error);
-        scores = {}; // fallback
-        renderResults();
-        renderRanking();
-        renderFinales();
-        renderFinalScores();
-      });
-  } else {
-    scores = {}; // scores vides par défaut dans admin
-  }
-});
-
-function saveScores(scores) {
-  const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(scores, null, 2));
-  const dlAnchorElem = document.createElement("a");
-  dlAnchorElem.setAttribute("href", dataStr);
-  dlAnchorElem.setAttribute("download", "resultats.json");
-  dlAnchorElem.click();
-}
-
-function loadScores() {
-  return scores;
-}
-
-
 const players = ["Clément", "André", "Michaël", "Guillaume", "Mica", "Yohan"];
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -52,9 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+function saveScores(scores) {
+  localStorage.setItem("tennis_scores", JSON.stringify(scores));
+}
 
-
-;
+function loadScores() {
+  const stored = localStorage.getItem("tennis_scores");
+  return stored ? JSON.parse(stored) : {};
 }
 
 function submitMatch(id, p1, p2) {
